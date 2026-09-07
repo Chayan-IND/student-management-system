@@ -22,7 +22,7 @@ export default function AddStudent() {
     section: '',
   });
   const createStudent = () => {
-    axios.post('http://localhost:80/students', student).then(() => {
+    axios.post(`${process.env.REACT_APP_API_URL || 'http://localhost:80'}/students`, student).then(() => {
       window.location.reload(false);
     });
   };
